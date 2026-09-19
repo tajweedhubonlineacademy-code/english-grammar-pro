@@ -457,13 +457,54 @@ function renderCommonMistakes() {
 }
 
 /* ==========================================================================
-   9. Interactive Quiz Arena
+   9. Interactive Quiz Arena with Auto-Shuffle & Firebase Integration
    ========================================================================== */
 let currentQuizIndex = 0;
 let quizScore = 0;
 let answered = false;
+let activeQuizQuestions = [];
+
+// Fisher-Yates Shuffle Algorithm for Real Randomization
+function shuffleArray(array) {
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function selectRandomQuizQuestions(count = 10) {
+  const shuffled = shuffleArray(GRAMMAR_DATA.quizzes);
+  return shuffled.slice(0, Math.min(count, shuffled.length));
+}
+
+async function loadFirebaseQuizzesIfAvailable() {
+  if (window.db) {
+    try {
+      const snap = await window.db.collection("quizzes").get();
+      if (!snap.empty) {
+        snap.forEach(doc => {
+          const qData = doc.data();
+          if (qData && qData.question && Array.isArray(qData.options)) {
+            GRAMMAR_DATA.quizzes.push(qData);
+          }
+        });
+        console.log("🔥 Loaded custom questions from Firebase Firestore!");
+      }
+    } catch (e) {
+      console.warn("Firebase quizzes fetch notice:", e.message);
+    }
+  }
+}
 
 function initQuiz() {
+  loadFirebaseQuizzesIfAvailable();
+  currentQuizIndex = 0;
+  quizScore = 0;
+  answered = false;
+  activeQuizQuestions = selectRandomQuizQuestions(10);
+
   currentQuizIndex = 0;
   quizScore = 0;
   answered = false;
@@ -477,7 +518,7 @@ function initQuiz() {
         return;
       }
       currentQuizIndex++;
-      if (currentQuizIndex < GRAMMAR_DATA.quizzes.length) {
+      if (currentQuizIndex < activeQuizQuestions.length) {
         answered = false;
         loadQuizQuestion();
       } else {
@@ -488,7 +529,7 @@ function initQuiz() {
 }
 
 function loadQuizQuestion() {
-  const q = GRAMMAR_DATA.quizzes[currentQuizIndex];
+  const q = activeQuizQuestions[currentQuizIndex];
   const qText = document.getElementById("quizQuestionText");
   const qHint = document.getElementById("quizUrduHint");
   const qCounter = document.getElementById("quizCounter");
@@ -499,13 +540,13 @@ function loadQuizQuestion() {
 
   if (!qText) return;
 
-  qCounter.textContent = `Question ${currentQuizIndex + 1} of ${GRAMMAR_DATA.quizzes.length}`;
-  progressFill.style.width = `${((currentQuizIndex + 1) / GRAMMAR_DATA.quizzes.length) * 100}%`;
+  qCounter.textContent = `Question ${currentQuizIndex + 1} of ${activeQuizQuestions.length}`;
+  progressFill.style.width = `${((currentQuizIndex + 1) / activeQuizQuestions.length) * 100}%`;
 
   qText.textContent = q.question;
   qHint.textContent = q.urduHint;
   feedbackBox.style.display = "none";
-  nextBtn.textContent = currentQuizIndex === GRAMMAR_DATA.quizzes.length - 1 ? "Finish Quiz 🏆" : "Next Question ➔";
+  nextBtn.textContent = currentQuizIndex === activeQuizQuestions.length - 1 ? "Finish Quiz 🏆" : "Next Question ➔";
 
   optionsBox.innerHTML = q.options.map((opt, idx) => `
     <button class="quiz-opt-btn" onclick="handleQuizAnswer(${idx})">
@@ -519,7 +560,7 @@ function handleQuizAnswer(selectedIndex) {
   if (answered) return;
   answered = true;
 
-  const q = GRAMMAR_DATA.quizzes[currentQuizIndex];
+  const q = activeQuizQuestions[currentQuizIndex];
   const optButtons = document.querySelectorAll(".quiz-opt-btn");
   const feedbackBox = document.getElementById("quizFeedback");
 
@@ -558,7 +599,7 @@ function showQuizResults() {
   const arena = document.getElementById("quizArenaInner");
   if (!arena) return;
 
-  const total = GRAMMAR_DATA.quizzes.length;
+  const total = activeQuizQuestions.length;
   const percentage = Math.round((quizScore / total) * 100);
 
   arena.innerHTML = `

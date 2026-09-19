@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://english-grammar-pro.vercel.app/sitemap.xml

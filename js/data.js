@@ -590,7 +590,7 @@ const GRAMMAR_DATA = {
     }
   ],
 
-  quizzes: [
+    quizzes: [
     {
       question: "Which tense is used for universal truths and daily routines?",
       urduHint: "روزمرہ معمولات اور آفاقی سچائی کے لیے کون سا ٹینس استعمال ہوتا ہے؟",
@@ -680,6 +680,91 @@ const GRAMMAR_DATA = {
       ],
       correct: 1,
       explanation: "جملے کا پہلا لفظ بڑا (Did)، نام بڑا (Ali) اور آخر میں سوالیہ نشان (?) ہونا چاہیے۔"
+    },
+    {
+      question: "Choose the correct modal verb: 'You ______ obey the traffic rules.'",
+      urduHint: "لازمی قانون یا فرض کی ادائیگی کے لیے کون سا لفظ آتا ہے؟",
+      options: ["might", "must", "could", "may"],
+      correct: 1,
+      explanation: "قانون یا لازمی فریضے کے لیے 'must' استعمال ہوتا ہے۔"
+    },
+    {
+      question: "Select the correct sentence:",
+      urduHint: "One of my friends واحد ہے یا جمع؟",
+      options: [
+        "One of my friend are doctor.",
+        "One of my friends is a doctor.",
+        "One of my friends are doctor.",
+        "One of my friend is a doctor."
+      ],
+      correct: 1,
+      explanation: "'One of my friends' کے بعد verb واحد 'is' آئے گا کیونکہ بات ایک دوست کی ہو رہی ہے۔"
+    },
+    {
+      question: "What is the third form (Past Participle) of the verb 'Choose'?",
+      urduHint: "Choose کی تیسری فارم کیا ہے؟",
+      options: ["Chose", "Choosed", "Chosen", "Choosing"],
+      correct: 2,
+      explanation: "Choose (1st) -> Chose (2nd) -> Chosen (3rd form)."
+    },
+    {
+      question: "Identify the tense: 'They had already eaten dinner when I arrived.'",
+      urduHint: "Had + 3rd form کس ٹینس کا فارمولا ہے؟",
+      options: ["Past Simple", "Past Perfect", "Present Perfect", "Past Continuous"],
+      correct: 1,
+      explanation: "Had + 3rd form 'Past Perfect' کی علامت ہے۔"
+    },
+    {
+      question: "Fill in the blank: 'He is afraid ______ dark places.'",
+      urduHint: "Afraid کے بعد کون سی مخصوص Preposition آتی ہے؟",
+      options: ["from", "with", "of", "to"],
+      correct: 2,
+      explanation: "Afraid کے بعد ہمیشہ 'of' کا استعمال ہوتا ہے (Afraid of)."
+    },
+    {
+      question: "What is the comparative degree of 'Good'?",
+      urduHint: "Good کا دوسرا درجہ (موازنہ) کیا ہوتا ہے؟",
+      options: ["Gooder", "Better", "Best", "More good"],
+      correct: 1,
+      explanation: "Good (Positive) -> Better (Comparative) -> Best (Superlative)."
+    },
+    {
+      question: "Convert to Passive: 'Someone stole my watch.'",
+      urduHint: "جب کام کرنے والے کا معلوم نہ ہو تو Subject ختم یا 'by someone' ہو جاتا ہے۔",
+      options: [
+        "My watch was stolen.",
+        "My watch is stolen.",
+        "My watch has been stolen.",
+        "My watch had stole."
+      ],
+      correct: 0,
+      explanation: "Past Simple کے Passive میں was/were + 3rd form لگتی ہے (My watch was stolen)."
+    },
+    {
+      question: "Which word is a Conjunction in: 'I like milk and honey'?",
+      urduHint: "کون سا لفظ دو چیزوں کو جوڑ رہا ہے؟",
+      options: ["like", "milk", "and", "honey"],
+      correct: 2,
+      explanation: "'and' دو الفاظ کو جوڑنے والا Conjunction (حرف عطف) ہے۔"
+    },
+    {
+      question: "Fill in the blank: 'If it rains, we ______ at home.'",
+      urduHint: "First Conditional جملے میں if-clause کے بعد کیا لگتا ہے؟",
+      options: ["will stay", "stayed", "had stayed", "would have stay"],
+      correct: 0,
+      explanation: "First conditional میں Present Simple کے بعد 'will + 1st form' آتا ہے۔"
+    },
+    {
+      question: "Which of the following is correct?",
+      urduHint: "Superior کے بعد than آتا ہے یا to؟",
+      options: [
+        "This cloth is superior than that.",
+        "This cloth is superior to that.",
+        "This cloth is more superior than that.",
+        "This cloth is superior from that."
+      ],
+      correct: 1,
+      explanation: "Superior, Junior, Senior, Prior کے بعد ہمیشہ 'to' آتا ہے۔"
     }
   ]
 };
