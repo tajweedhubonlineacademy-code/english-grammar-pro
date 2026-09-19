@@ -1,25 +1,29 @@
 // Firebase Configuration for GrammarCraft Pro
-// Paste your Firebase Web App credentials below:
 const FIREBASE_CONFIG = {
-  apiKey: "YOUR_API_KEY_HERE",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID_HERE",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID_HERE"
+  apiKey: "AIzaSyBjQIVwFcs_IUFCJ7OER47Dsyt_cHa89nI",
+  authDomain: "english-grammar-pro-490e5.firebaseapp.com",
+  projectId: "english-grammar-pro-490e5",
+  storageBucket: "english-grammar-pro-490e5.firebasestorage.app",
+  messagingSenderId: "82523669782",
+  appId: "1:82523669782:web:099c89b1fb1d47ca8cfc37"
 };
 
-// Auto-check if Firebase credentials are provided
-const isFirebaseReady = FIREBASE_CONFIG.apiKey && FIREBASE_CONFIG.apiKey !== "YOUR_API_KEY_HERE";
-
-if (isFirebaseReady) {
-  try {
+// Initialize Firebase Cloud Database
+try {
+  if (typeof firebase !== "undefined") {
     firebase.initializeApp(FIREBASE_CONFIG);
     window.db = firebase.firestore();
-    console.log("Firebase Firestore connected successfully! 🔥");
-  } catch (e) {
-    console.warn("Firebase initialization skipped:", e);
+    console.log("🔥 Firebase Cloud Database (Firestore) Connected Successfully!");
+    
+    // Optional: Log connection state on page
+    window.addEventListener("DOMContentLoaded", () => {
+      const badge = document.querySelector(".vip-tag");
+      if (badge) {
+        badge.innerHTML = 'VIP PRO <i class="fa-solid fa-cloud-check" style="margin-left:4px; font-size:0.75rem;"></i>';
+        badge.title = "Firebase Cloud Connected";
+      }
+    });
   }
-} else {
-  console.log("ℹ️ Firebase is in Offline / Local Mode. To connect Firebase, paste keys in js/firebase-config.js");
+} catch (e) {
+  console.warn("Firebase initialization error:", e);
 }
