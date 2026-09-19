@@ -61,6 +61,16 @@ function initNavigation() {
     const activeSec = document.getElementById(targetId);
     if (activeSec) {
       activeSec.classList.add("active");
+      
+      // Auto-shuffle mistakes on tab visit
+      if (targetId === "mistakesView") {
+        renderCommonMistakes(true);
+      }
+      
+      // Auto-refresh quiz if finished
+      if (targetId === "quizView" && currentQuizIndex >= activeQuizQuestions.length) {
+        initQuiz();
+      }
     }
 
     const correspondingTab = document.querySelector(`.tab-btn[data-target="${targetId}"]`);
@@ -425,13 +435,18 @@ function renderDirectIndirect() {
 }
 
 /* ==========================================================================
-   8. Common Mistakes Renderer
+   8. Common Mistakes Renderer with Auto-Shuffle & Rotation
    ========================================================================== */
-function renderCommonMistakes() {
+function renderCommonMistakes(forceShuffle = false) {
   const grid = document.getElementById("mistakesGrid");
   if (!grid) return;
 
-  grid.innerHTML = GRAMMAR_DATA.commonMistakes.map(m => `
+  // Pick 10 random mistakes on each tab visit or shuffle
+  const mistakesList = forceShuffle 
+    ? shuffleArray(GRAMMAR_DATA.commonMistakes).slice(0, 10)
+    : GRAMMAR_DATA.commonMistakes.slice(0, 10);
+
+  grid.innerHTML = mistakesList.map(m => `
     <div class="mistake-card">
       <div class="sentence-compare">
         <div class="wrong-pill">

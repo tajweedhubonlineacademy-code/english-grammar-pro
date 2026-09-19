@@ -527,7 +527,7 @@ const GRAMMAR_DATA = {
     ]
   },
 
-  commonMistakes: [
+    commonMistakes: [
     {
       wrong: "He do not like coffee.",
       right: "He does not like coffee.",
@@ -587,6 +587,126 @@ const GRAMMAR_DATA = {
       right: "I look forward to meeting you.",
       explanation: "'Look forward to' کے بعد Gerund یعنی Verb+ing کا استعمال ہوتا ہے۔",
       urdu: "میں آپ سے ملاقات کا منتظر ہوں۔"
+    },
+    {
+      wrong: "I am agree with you.",
+      right: "I agree with you.",
+      explanation: "Agree خود ایک فعل (Verb) ہے، اس کے ساتھ 'am' لگانے کی ضرورت نہیں ہوتی۔",
+      urdu: "میں آپ سے متفق ہوں۔"
+    },
+    {
+      wrong: "What is your good name?",
+      right: "What is your name? / May I have your name?",
+      explanation: "انگریزی میں نام کے ساتھ 'good' کا اضافہ نہیں کیا جاتا، یہ صرف برصغیر کا ترجمہ ہے۔",
+      urdu: "آپ کا نام کیا ہے؟"
+    },
+    {
+      wrong: "Please return back my book.",
+      right: "Please return my book.",
+      explanation: "Return کا مطلب ہی واپس لوٹانا ہے، اس کے ساتھ 'back' لگانا غیر ضروری تکرار (Redundancy) ہے۔",
+      urdu: "براہ کرم میری کتاب واپس کر دیں۔"
+    },
+    {
+      wrong: "He made a blunder mistake.",
+      right: "He made a blunder. / He made a big mistake.",
+      explanation: "Blunder کا اپنا مطلب ہی 'بڑی غلطی' ہے، اس کے ساتھ لفظ 'mistake' نہیں لگتا۔",
+      urdu: "اس سے بہت بڑی غلطی ہوئی۔"
+    },
+    {
+      wrong: "Can you repeat again?",
+      right: "Can you repeat? / Can you say that again?",
+      explanation: "Repeat کا مطلب ہی دوبارہ کہنا ہے، اس کے ساتھ 'again' اضافی ہے۔",
+      urdu: "کیا آپ دوبارہ کہہ سکتے ہیں؟"
+    },
+    {
+      wrong: "She is listening music.",
+      right: "She is listening to music.",
+      explanation: "Listen کے بعد ہمیشہ حرف ربط (Preposition) 'to' آتا ہے۔",
+      urdu: "وہ موسیقی سن رہی ہے۔"
+    },
+    {
+      wrong: "He died with cancer.",
+      right: "He died of cancer.",
+      explanation: "کسی بیماری سے موت واقع ہونے پر 'die of' آتا ہے، 'die with' غلط ہے۔",
+      urdu: "اس کا انتقال کینسر کی وجہ سے ہوا۔"
+    },
+    {
+      wrong: "Everyone are ready to go.",
+      right: "Everyone is ready to go.",
+      explanation: "Everyone, Everybody, Someone گرامر میں ہمیشہ واحد (Singular) مانے جاتے ہیں، ان کے ساتھ 'is' لگتا ہے۔",
+      urdu: "ہر کوئی جانے کے لیے تیار ہے۔"
+    },
+    {
+      wrong: "I have a good news for you.",
+      right: "I have good news for you. / I have a piece of good news.",
+      explanation: "News ایک ناپابند شمار (Uncountable) اسم ہے، اس سے پہلے 'a' نہیں لگتا۔",
+      urdu: "میرے پاس آپ کے لیے ایک خوشخبری ہے۔"
+    },
+    {
+      wrong: "The informations are false.",
+      right: "The information is false.",
+      explanation: "Information کا کوئی جمع (Plural 'informations') نہیں ہوتا، یہ ہمیشہ واحد رہتا ہے۔",
+      urdu: "معلومات غلط ہیں۔"
+    },
+    {
+      wrong: "He bought two dozens apples.",
+      right: "He bought two dozen apples.",
+      explanation: "گنتی (two, three) کے بعد 'dozen' کے ساتھ 's' نہیں لگایا جاتا۔",
+      urdu: "اس نے دو درجن سیب خریدے۔"
+    },
+    {
+      wrong: "She gave me an advice.",
+      right: "She gave me some advice. / She gave me a piece of advice.",
+      explanation: "Advice بھی Uncountable noun ہے، اس کے ساتھ 'an' نہیں آتا۔",
+      urdu: "اس نے مجھے ایک نصیحت کی۔"
+    },
+    {
+      wrong: "I prefer tea than coffee.",
+      right: "I prefer tea to coffee.",
+      explanation: "ترجیح دینے کے لیے 'prefer' کے بعد ہمیشہ 'to' لگتا ہے، 'than' غلط ہے۔",
+      urdu: "میں کافی کے مقابلے میں چائے کو ترجیح دیتا ہوں۔"
+    },
+    {
+      wrong: "He is angry on me.",
+      right: "He is angry with me.",
+      explanation: "کسی انسان سے ناراضگی کے لیے 'angry with' آتا ہے، 'angry on' غلط ہے۔",
+      urdu: "وہ مجھ سے ناراض ہے۔"
+    },
+    {
+      wrong: "They went to home.",
+      right: "They went home.",
+      explanation: "Home سے پہلے 'to' نہیں لگایا جاتا جب حرکت والے افعال (go, come, arrive) آئیں۔",
+      urdu: "وہ گھر چلے گئے۔"
+    },
+    {
+      wrong: "Unless you do not work hard, you will fail.",
+      right: "Unless you work hard, you will fail.",
+      explanation: "Unless کا مطلب خود منفی (اگر نہیں) ہوتا ہے، اس لیے اس کے بعد 'not' نہیں لگتا۔",
+      urdu: "جب تک آپ محنت نہیں کریں گے، فیل ہو جائیں گے۔"
+    },
+    {
+      wrong: "I am having two brothers.",
+      right: "I have two brothers.",
+      explanation: "ملکیت یا تعلق ظاہر کرنے کے لیے Have کے ساتھ 'ing' نہیں لگتا۔",
+      urdu: "میرے دو بھائی ہیں۔"
+    },
+    {
+      wrong: "The climate of Murree is cooler than Lahore.",
+      right: "The climate of Murree is cooler than that of Lahore.",
+      explanation: "موازنہ آب و ہوا کا آب و ہوا سے ہونا چاہیے، آب و ہوا کا شہر سے نہیں۔ اس لیے 'that of' لگے گا۔",
+      urdu: "مری کی آب و ہوا لاہور کی آب و ہوا سے زیادہ ٹھنڈی ہے۔"
+    },
+    {
+      wrong: "The police is investigating the case.",
+      right: "The police are investigating the case.",
+      explanation: "انگریزی میں Police ہمیشہ جمع (Plural) استعمال ہوتی ہے، اس لیے 'are' لگے گا۔",
+      urdu: "پولیس معاملے کی تفتیش کر رہی ہے۔"
+    },
+    {
+      wrong: "I know him good.",
+      right: "I know him well.",
+      explanation: "کسی کو جاننے کے انداز کے لیے Adverb یعنی 'well' لگے گا، 'good' صفت ہے۔",
+      urdu: "میں اسے اچھی طرح جانتا ہوں۔"
     }
   ],
 
