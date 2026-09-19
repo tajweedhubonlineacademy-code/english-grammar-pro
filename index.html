@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>GrammarCraft VIP - Master English Grammar with Urdu Translation</title>
+  <meta name="description" content="Ultimate VIP English Grammar Learning Platform: Complete 12 Tenses, Parts of Speech, Active & Passive Voice, Direct & Indirect, Live Urdu Translator, and Interactive Quizzes.">
+  <meta name="theme-color" content="#0a0f1d">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="GrammarCraft VIP - English Grammar Master">
+  <meta property="og:description" content="Complete English Grammar A to Z with Urdu Explanations, Live Translator, and Interactive Quizzes.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Ambient Glow Effects -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <!-- Sticky Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo">
+        <div class="logo-icon">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div class="logo-text">
+          <div class="logo-title">
+            Grammar<span>Craft</span>
+            <span class="vip-tag">VIP PRO</span>
+          </div>
+          <span class="logo-subtitle">Complete English Master with Urdu</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <ul class="nav-menu">
+        <li><a href="#translator" class="nav-link active" data-target="translatorView"><i class="fa-solid fa-language"></i> Translator</a></li>
+        <li><a href="#tenses" class="nav-link" data-target="tensesView"><i class="fa-solid fa-clock"></i> 12 Tenses</a></li>
+        <li><a href="#pos" class="nav-link" data-target="posView"><i class="fa-solid fa-shapes"></i> Parts of Speech</a></li>
+        <li><a href="#voice" class="nav-link" data-target="voiceView"><i class="fa-solid fa-arrows-split-up-and-left"></i> Voice & Narration</a></li>
+        <li><a href="#mistakes" class="nav-link" data-target="mistakesView"><i class="fa-solid fa-triangle-exclamation"></i> Common Mistakes</a></li>
+        <li><a href="#quiz" class="nav-link" data-target="quizView"><i class="fa-solid fa-award"></i> Quiz Arena</a></li>
+      </ul>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <button id="themeToggle" class="icon-btn" title="Toggle Theme" aria-label="Toggle Theme">
+          <i class="fa-solid fa-sun"></i>
+        </button>
+        <button id="hamburgerBtn" class="icon-btn hamburger-btn" title="Open Menu" aria-label="Open Menu">
+          <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Navigation -->
+  <div id="drawerBackdrop" class="drawer-backdrop"></div>
+  <aside id="mobileDrawer" class="mobile-drawer">
+    <div class="drawer-header">
+      <div class="brand-logo">
+        <div class="logo-icon" style="width:36px; height:36px; font-size:1.1rem;">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <span style="font-weight:800; font-size:1.1rem;">Grammar<span style="color:var(--primary);">Craft</span></span>
+      </div>
+      <button id="closeDrawer" class="icon-btn" style="width:36px; height:36px;" aria-label="Close Drawer">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <ul class="mobile-nav-links">
+      <li><a href="#translator" class="nav-link active" data-target="translatorView"><i class="fa-solid fa-language"></i> Live Smart Translator</a></li>
+      <li><a href="#tenses" class="nav-link" data-target="tensesView"><i class="fa-solid fa-clock"></i> 12 Tenses Master Guide</a></li>
+      <li><a href="#pos" class="nav-link" data-target="posView"><i class="fa-solid fa-shapes"></i> 8 Parts of Speech</a></li>
+      <li><a href="#voice" class="nav-link" data-target="voiceView"><i class="fa-solid fa-arrows-split-up-and-left"></i> Active/Passive & Direct/Indirect</a></li>
+      <li><a href="#mistakes" class="nav-link" data-target="mistakesView"><i class="fa-solid fa-triangle-exclamation"></i> Common English Mistakes</a></li>
+      <li><a href="#quiz" class="nav-link" data-target="quizView"><i class="fa-solid fa-award"></i> Interactive Quiz Arena</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content Body -->
+  <main class="container">
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-badge">
+        <i class="fa-solid fa-sparkles"></i> 100% Free • Works Offline & Online • Mobile Friendly
+      </div>
+      <h1 class="hero-title">
+        Master English Grammar <br>
+        <span class="gradient-text">A to Z with Urdu Explanation</span>
+      </h1>
+      <p class="hero-subtitle">
+        مکمل انگلش گرامر اب آسان اردو تشریح، خودکار لائیو ٹرانسلیٹر، آڈیو تلفظ اور انٹرایکٹو ٹیسٹ کے ساتھ۔
+      </p>
+
+      <!-- Hero Call To Actions -->
+      <div class="hero-cta-group">
+        <button class="btn btn-primary" onclick="document.querySelector('.tab-btn[data-target=\'tensesView\']').click();">
+          <i class="fa-solid fa-book-open"></i> Start Learning Tenses
+        </button>
+        <button class="btn btn-secondary" onclick="document.querySelector('.tab-btn[data-target=\'translatorView\']').click();">
+          <i class="fa-solid fa-language"></i> Open Live Translator
+        </button>
+        <button class="btn btn-secondary" onclick="document.querySelector('.tab-btn[data-target=\'quizView\']').click();">
+          <i class="fa-solid fa-circle-question"></i> Take 2-Min Quiz
+        </button>
+      </div>
+
+      <!-- Quick Search Bar -->
+      <div class="search-wrapper">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="globalSearchInput" class="search-input-box" placeholder="Search any rule, tense, part of speech (e.g. Present Continuous, Noun, Did)..." aria-label="Search grammar">
+      </div>
+    </section>
+
+    <!-- Navigation Tabs Bar -->
+    <nav class="section-nav-tabs" aria-label="Grammar Sections">
+      <button class="tab-btn active" data-target="translatorView">
+        <i class="fa-solid fa-language"></i> Smart Translator
+      </button>
+      <button class="tab-btn" data-target="tensesView">
+        <i class="fa-solid fa-clock"></i> All 12 Tenses
+      </button>
+      <button class="tab-btn" data-target="posView">
+        <i class="fa-solid fa-shapes"></i> Parts of Speech
+      </button>
+      <button class="tab-btn" data-target="voiceView">
+        <i class="fa-solid fa-arrows-split-up-and-left"></i> Voice & Narration
+      </button>
+      <button class="tab-btn" data-target="mistakesView">
+        <i class="fa-solid fa-triangle-exclamation"></i> Common Mistakes
+      </button>
+      <button class="tab-btn" data-target="quizView">
+        <i class="fa-solid fa-award"></i> Quiz Arena
+      </button>
+    </nav>
+
+    <!-- ====================================================================
+         VIEW 1: LIVE SMART TRANSLATOR STUDIO
+         ==================================================================== -->
+    <section id="translatorView" class="view-section active">
+      <div class="section-header">
+        <h2>Smart Instant Live Translator</h2>
+        <p>انگلش لکھیں اور فوری بامحاورہ اردو ٹرانسلیشن حاصل کریں مع قدرتی آڈیو تلفظ (Voice Pronunciation)</p>
+      </div>
+
+      <div class="translator-box">
+        <div class="translator-top-bar">
+          <div class="lang-selector-group">
+            <span id="srcLangPill" class="lang-pill">English</span>
+            <button id="swapLangBtn" class="swap-btn" title="Swap Languages" aria-label="Swap Languages">
+              <i class="fa-solid fa-arrow-right-arrow-left"></i>
+            </button>
+            <span id="tgtLangPill" class="lang-pill">Urdu (اردو)</span>
+          </div>
+
+          <div>
+            <button id="clearTransBtn" class="btn btn-secondary" style="padding: 6px 14px; font-size: 0.82rem;">
+              <i class="fa-solid fa-trash-can"></i> Clear
+            </button>
+          </div>
+        </div>
+
+        <div class="translator-grid">
+          <!-- Source Input Pane -->
+          <div class="trans-pane">
+            <textarea id="transInput" class="trans-textarea" placeholder="Type or paste any English sentence here... (e.g. He is working hard for his exams)" maxlength="500"></textarea>
+            
+            <div class="pane-actions">
+              <div class="action-tools">
+                <button id="speakInputBtn" class="tool-btn" title="Listen English Pronunciation" aria-label="Listen Pronunciation">
+                  <i class="fa-solid fa-volume-high"></i>
+                </button>
+              </div>
+              <span id="charCounter" class="char-counter">0 / 500</span>
+            </div>
+          </div>
+
+          <!-- Target Output Pane -->
+          <div class="trans-pane">
+            <div id="transOutput" class="trans-output urdu-text">
+              ترجمہ یہاں نظر آئے گا...
+            </div>
+
+            <div class="pane-actions">
+              <div class="action-tools">
+                <button id="copyTransBtn" class="tool-btn" title="Copy Translation" aria-label="Copy Translation">
+                  <i class="fa-solid fa-copy"></i>
+                </button>
+                <button id="speakOutputBtn" class="tool-btn" title="Listen Audio" aria-label="Listen Audio">
+                  <i class="fa-solid fa-volume-high"></i>
+                </button>
+              </div>
+              <span style="font-size:0.75rem; color:var(--text-sub);">Auto-Detect Active</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Phrase Chips -->
+        <div class="quick-phrases-tray">
+          <span style="font-size: 0.8rem; font-weight:700; color:var(--text-muted);">Try Sample Sentences:</span>
+          <button class="quick-chip" data-phrase="She is reading a wonderful book.">She is reading a book</button>
+          <button class="quick-chip" data-phrase="I have completed my daily lessons.">I completed my lesson</button>
+          <button class="quick-chip" data-phrase="They will travel to Lahore next week.">They will travel to Lahore</button>
+          <button class="quick-chip" data-phrase="Honesty is always the best policy.">Honesty is the best policy</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         VIEW 2: 12 TENSES MASTER STUDIO
+         ==================================================================== -->
+    <section id="tensesView" class="view-section">
+      <div class="section-header">
+        <h2>All 12 Tenses Master Studio</h2>
+        <p>تمام بارہ زمانے مع اردو شناخت، ہیلپنگ ورب، پوزیٹو و نیگیٹو فارمولے اور حقیقی مثالیں</p>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="tenses-category-pills">
+        <button class="cat-pill active" data-cat="all">All Tenses (12)</button>
+        <button class="cat-pill" data-cat="present">Present Tenses (حال)</button>
+        <button class="cat-pill" data-cat="past">Past Tenses (ماضی)</button>
+        <button class="cat-pill" data-cat="future">Future Tenses (مستقبل)</button>
+      </div>
+
+      <!-- Tenses Dynamic Cards Grid -->
+      <div id="tensesGrid" class="tenses-grid">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         VIEW 3: 8 PARTS OF SPEECH
+         ==================================================================== -->
+    <section id="posView" class="view-section">
+      <div class="section-header">
+        <h2>8 Parts of Speech (اجزائے کلام)</h2>
+        <p>انگریزی زبان کی بنیادی عمارت کے 8 لازمی ستون، ان کی اقسام اور آسان اردو مثالیں</p>
+      </div>
+
+      <div id="posGrid" class="pos-grid">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         VIEW 4: ACTIVE & PASSIVE + DIRECT / INDIRECT
+         ==================================================================== -->
+    <section id="voiceView" class="view-section">
+      <div class="section-header">
+        <h2>Active & Passive Voice (معروف و مجہول)</h2>
+        <p>فعل کی تبدیلی کے سنہری اصول اور تمام زمانوں کا تقابلی چارٹ</p>
+      </div>
+
+      <div class="table-responsive">
+        <table class="vip-table">
+          <thead>
+            <tr>
+              <th>Tense (زمانہ)</th>
+              <th>Active Voice Formula</th>
+              <th>Passive Voice Formula</th>
+              <th>Practical Examples (مثالیں)</th>
+            </tr>
+          </thead>
+          <tbody id="activePassiveTableBody">
+            <!-- Rendered via JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section-header" style="margin-top: 50px;">
+        <h2>Direct & Indirect Narration (بلاواسطہ و بالواسطہ)</h2>
+        <p>بول چال کی تبدیلی کے بنیادی قوانین اور مثالیں</p>
+      </div>
+
+      <div id="narrationList" style="max-width:850px; margin:0 auto 40px;">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         VIEW 5: COMMON MISTAKES
+         ==================================================================== -->
+    <section id="mistakesView" class="view-section">
+      <div class="section-header">
+        <h2>Common English Mistakes & Sentence Corrections</h2>
+        <p>روزمرہ بول چال میں ہونے والی عام غلطیاں اور ان کے درست طریقے</p>
+      </div>
+
+      <div id="mistakesGrid" class="mistakes-grid">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         VIEW 6: INTERACTIVE QUIZ ARENA
+         ==================================================================== -->
+    <section id="quizView" class="view-section">
+      <div class="section-header">
+        <h2>Interactive Grammar Quiz Arena</h2>
+        <p>اپنی انگلش گرامر کی مہارت کا خودکار ٹیسٹ لیں اور فوری اسکور چیک کریں</p>
+      </div>
+
+      <div class="quiz-arena">
+        <div id="quizArenaInner">
+          <div class="quiz-header">
+            <span id="quizCounter" style="font-weight:700; color:var(--primary); font-size:0.9rem;">Question 1 of 10</span>
+            <span style="font-size:0.85rem; color:var(--text-sub);"><i class="fa-solid fa-stopwatch"></i> Self-Paced Test</span>
+          </div>
+
+          <div class="quiz-progress-bar-bg">
+            <div id="quizProgressFill" class="quiz-progress-bar-fill"></div>
+          </div>
+
+          <div class="quiz-question-box">
+            <h3 id="quizQuestionText" class="quiz-question-text">Loading question...</h3>
+            <div id="quizUrduHint" class="quiz-urdu-hint">اردو رہنمائی لوڈ ہو رہی ہے...</div>
+          </div>
+
+          <div id="quizOptions" class="quiz-options-list">
+            <!-- Rendered via JS -->
+          </div>
+
+          <div id="quizFeedback" class="quiz-feedback-box"></div>
+
+          <div class="quiz-footer">
+            <button id="quizNextBtn" class="btn btn-primary">
+              Next Question <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modern VIP Footer -->
+  <footer class="vip-footer">
+    <div class="container footer-content">
+      <div class="brand-logo">
+        <div class="logo-icon" style="width:36px; height:36px; font-size:1.1rem;">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div class="logo-title" style="font-size:1.1rem;">
+          Grammar<span>Craft</span> VIP
+        </div>
+      </div>
+      <p style="color:var(--text-muted); font-size:0.88rem; max-width:500px;">
+        Empowering students with comprehensive, crystal-clear English Grammar tools, live translation, and pronunciation mastery.
+      </p>
+      <div class="footer-links">
+        <a href="#translator" class="footer-link" onclick="document.querySelector('.tab-btn[data-target=\'translatorView\']').click();">Live Translator</a>
+        <a href="#tenses" class="footer-link" onclick="document.querySelector('.tab-btn[data-target=\'tensesView\']').click();">All 12 Tenses</a>
+        <a href="#pos" class="footer-link" onclick="document.querySelector('.tab-btn[data-target=\'posView\']').click();">Parts of Speech</a>
+        <a href="#mistakes" class="footer-link" onclick="document.querySelector('.tab-btn[data-target=\'mistakesView\']').click();">Sentence Corrections</a>
+        <a href="#quiz" class="footer-link" onclick="document.querySelector('.tab-btn[data-target=\'quizView\']').click();">Take Free Quiz</a>
+      </div>
+      <div style="font-size:0.8rem; color:var(--text-sub); margin-top:8px;">
+        &copy; 2026 GrammarCraft Pro. Built for Instant 1-Click Deployment on Vercel.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
